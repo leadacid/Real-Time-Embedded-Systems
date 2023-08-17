@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <sched.h>
+#include <sys/utsname.h>
 /* Including syslog.h in order to be able to call openlog and syslog
  * functions */
 #include <syslog.h>
@@ -15,6 +16,7 @@ typedef struct
     int threadIdx;
 } threadParams_t;
 
+struct utsname unameData;
 // POSIX thread declarations and scheduling attributes
 pthread_t threads[NUM_THREADS];
 threadParams_t threadParams[NUM_THREADS];
@@ -34,6 +36,10 @@ void *pthread(void *threadp)
 
 int main (int argc, char *argv[])
 {
+   uname(&unameData);
+   syslog(LOG_INFO, "[COURSE:1][ASSIGNMENT:1] %s %s %s %s GNU/Linux\n", unameData.sysname,
+		unameData.nodename, unameData.release,
+	     	unameData.version);	
    // The index of our for loop
    int i = 0;
 
