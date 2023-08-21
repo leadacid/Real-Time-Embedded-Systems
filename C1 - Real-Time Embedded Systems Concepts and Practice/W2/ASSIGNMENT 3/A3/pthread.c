@@ -7,7 +7,7 @@
  * functions */
 #include <syslog.h>
 #include <sys/utsname.h>
-
+#include <unistd.h>
 
 // Specified number of threads for this assignment: 128
 #define NUM_THREADS 128
@@ -122,6 +122,7 @@ void* counterThread(void* threadp)
  
     // Provides syslog message as requested by the assignment
     syslog(LOG_INFO, "[COURSE:1][ASSIGNMENT:3]: Thread idx=%d, sum[1...%d]=%d Running on core : %d\n", threadParams->threadIdx, threadParams->threadIdx, gsum, sched_getcpu());
+    pthread_exit(NULL);
 }
 
 /* Entry point for the start thread that will create the remaining threads */
@@ -172,4 +173,5 @@ int main(int argc, char* argv[])
     printf("\nTEST COMPLETE\n");
 
 	closelog();
+	EXIT_SUCCESS;
 }
