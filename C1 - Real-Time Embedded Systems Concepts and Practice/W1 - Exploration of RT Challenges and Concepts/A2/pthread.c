@@ -27,7 +27,7 @@ threadParams_t threadParams[THREAD_COUNT];
 void* counterThread(void* threadp)
 {
 	int i;
-    int gsum = 0;
+        int gsum = 0;
 	threadParams_t* threadParams = (threadParams_t*)threadp;
 
    /* Performs sum calculation based on the parameter carried by the
@@ -39,6 +39,7 @@ void* counterThread(void* threadp)
  
     // Provides syslog message as requested by the assignment
     syslog(LOG_INFO, "[COURSE:1][ASSIGNMENT:2]: Thread idx=%d, sum[1...%d]=%d\n", threadParams->threadIdx, threadParams->threadIdx, gsum);
+    pthread_exit(NULL);
 }
 
 int main(int argc, char* argv[])
@@ -52,7 +53,7 @@ int main(int argc, char* argv[])
 	     	unameData.version,
 	   	unameData.machine);	
 	// The index of our for loop
-	int i;
+    int i;
  
     /* Loop over the 128 items of the threadParams array to spawn the
     * respective thread and associate to it the entry point function
@@ -64,7 +65,7 @@ int main(int argc, char* argv[])
       threadParams[i].threadIdx = i;
 	  // Creates the thread
   	  pthread_create(&threads[i],			// pointer to thread descriptor
-  	    	(void*)0,						// use default attributes
+  	    	    (void*)0,						// use default attributes
   		    counterThread,					// thread function entry point
   		    (void*)&(threadParams[i]));		// parameters to pass in
     }
