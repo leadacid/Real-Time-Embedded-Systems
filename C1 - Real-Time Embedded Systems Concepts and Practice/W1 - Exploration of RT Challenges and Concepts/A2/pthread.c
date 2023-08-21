@@ -78,4 +78,5 @@ int main(int argc, char* argv[])
 
 	printf("TEST COMPLETE\n");
 	closelog();
+	EXIT_SUCCESS;
 }
