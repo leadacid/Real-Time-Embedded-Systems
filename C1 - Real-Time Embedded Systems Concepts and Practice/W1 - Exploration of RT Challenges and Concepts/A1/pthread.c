@@ -32,6 +32,7 @@ void *pthread(void *threadp)
     
     // string to log in the syslog file from the created thread
     syslog(LOG_INFO, "[COURSE:1][ASSIGNMENT:1] Hello World from Thread!\n");
+    pthread_exit(NULL);
 }
 
 int main (int argc, char *argv[])
