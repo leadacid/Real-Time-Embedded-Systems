@@ -1,0 +1,32 @@
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Linux raspberrypi 6.1.21-v8+ #1642 SMP PREEMPT Mon Apr  3 17:24:16 BST 2023 aarch64 GNU/Linux
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Programm get started
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Process_id=6152 changed its scheduler from SCHED_OTHER to SCHED_FIFO prior=99
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Sequencer start a new LCM period @ 0.009977407
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start    1 @ 0.010073870 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start    2 @ 0.029990611 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 2 start    1 @ 0.020239611 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start    3 @ 0.049994314 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start    4 @ 0.069990407 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 2 start    2 @ 0.060026833 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start    5 @ 0.089989426 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 3 start    1 @ 0.040424166 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start    6 @ 0.110000870 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start    7 @ 0.129990407 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 2 start    3 @ 0.120065296 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start    8 @ 0.149994000 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start    9 @ 0.169989518 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 2 start    4 @ 0.160031537 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start   10 @ 0.189991277 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start   11 @ 0.209991407 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start   12 @ 0.229990666 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 2 start    5 @ 0.220018222 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 3 start    2 @ 0.180090611 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start   13 @ 0.249996129 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start   14 @ 0.269991500 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 2 start    6 @ 0.260030222 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Abortion is requested by timeout.
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Thread 1 start   15 @ 0.289995166 on core 3
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Sequencer start a new LCM period @ 0.309984185
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Service 1 was aborted.
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Service 2 was aborted.
+Aug 23 00:18:44 raspberrypi [COURSE:2][ASSIGNMENT:2]: Service 3 was aborted.
