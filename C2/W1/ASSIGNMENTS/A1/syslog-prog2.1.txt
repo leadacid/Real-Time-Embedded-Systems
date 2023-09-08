@@ -1,0 +1,21 @@
+[COURSE:2][ASSIGNMENT:1]: Linux Pi4 6.1.21-v8+ #1642 SMP PREEMPT Mon Apr  3 17:24:16 BST 2023 aarch64 GNU/Linux
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 1 @ sec=1.014401#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 2 start 1 @ sec=1.014666#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 3 start 1 @ sec=1.014738#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 2 @ sec=1.034331#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 3 @ sec=1.054270#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 4 @ sec=1.074209#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 5 @ sec=1.094148#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 6 @ sec=1.114094#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 2 start 2 @ sec=1.114167#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 7 @ sec=1.134027#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 8 @ sec=1.153959#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 3 start 2 @ sec=1.164120#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 9 @ sec=1.173897#012 on core=3
+Sep  7 17:22:00 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 10 @ sec=1.193826#012 on core=3
+Sep  7 17:22:01 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 11 @ sec=1.213773#012 on core=3
+Sep  7 17:22:01 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 2 start 3 @ sec=1.213850#012 on core=3
+Sep  7 17:22:01 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 12 @ sec=1.233714#012 on core=3
+Sep  7 17:22:01 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 13 @ sec=1.253652#012 on core=3
+Sep  7 17:22:01 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 14 @ sec=1.273590#012 on core=3
+Sep  7 17:22:01 Pi4 seqgenex0: [COURSE:2][ASSIGNMENT:1]: Thread 1 start 15 @ sec=1.294519#012 on core=3
