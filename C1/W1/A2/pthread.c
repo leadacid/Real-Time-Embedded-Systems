@@ -48,10 +48,10 @@ int main(int argc, char* argv[])
     uname(&unameData);
     syslog(LOG_INFO, "[COURSE:1][ASSIGNMENT:2] %s %s %s %s %s GNU/Linux\n", 
 	        unameData.sysname,
-		unameData.nodename, 
+			unameData.nodename, 
 	        unameData.release,
 	     	unameData.version,
-	   	unameData.machine);	
+	   		unameData.machine);	
 	// The index of our for loop
     int i;
  
