@@ -72,7 +72,6 @@ struct sched_param rt_param[NUM_THREADS];
 threadParams_t threadParams[NUM_THREADS];
 
 
-
 void main(void)
 {
     
