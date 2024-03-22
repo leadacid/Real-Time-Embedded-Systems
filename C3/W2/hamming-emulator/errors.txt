@@ -1,0 +1,2331 @@
+test case 0
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=0
+PARITY: bit to flip=4
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x37
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=00000
+
+PW ERROR
+
+PARITY: request=0
+PARITY: bit to flip=4
+PARITY: original byte    = 0x37
+PARITY: flipped bit byte = 0x27
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 1
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=1
+PARITY: bit to flip=0
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x26
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011110100101
+READ  : SYNDROME        = codeword=01000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 1
+
+PARITY: request=1
+PARITY: bit to flip=0
+PARITY: original byte    = 0x26
+PARITY: flipped bit byte = 0x27
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 2
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=2
+PARITY: bit to flip=1
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x25
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101110100101
+READ  : SYNDROME        = codeword=00100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 2
+
+PARITY: request=2
+PARITY: bit to flip=1
+PARITY: original byte    = 0x25
+PARITY: flipped bit byte = 0x27
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 3
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAA
+
+READ  : COMPUTED PARITY = codeword=10010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0101    => 1010 1010 [0xAA]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110110100101
+READ  : SYNDROME        = codeword=01100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 3
+
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xAB
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 4
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x23
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111010100101
+READ  : SYNDROME        = codeword=00010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 4
+
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x23
+PARITY: flipped bit byte = 0x27
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 5
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA9
+
+READ  : COMPUTED PARITY = codeword=10100
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_0101    => 1010 1001 [0xA9]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111100100101
+READ  : SYNDROME        = codeword=01010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 5
+
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0xAB
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 6
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAF
+
+READ  : COMPUTED PARITY = codeword=11000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_0101    => 1010 1111 [0xAF]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111111100101
+READ  : SYNDROME        = codeword=00110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 6
+
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0xAB
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 7
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA3
+
+READ  : COMPUTED PARITY = codeword=00000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_0101    => 1010 0011 [0xA3]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110000101
+READ  : SYNDROME        = codeword=01110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 7
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xA3
+DATA  : flipped bit byte = 0xAB
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 8
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x2F
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110110101
+READ  : SYNDROME        = codeword=00001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 8
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x2F
+PARITY: flipped bit byte = 0x27
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 9
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xBB
+
+READ  : COMPUTED PARITY = codeword=10111
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_1101    => 1011 1011 [0xBB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110101101
+READ  : SYNDROME        = codeword=01001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 9
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xBB
+DATA  : flipped bit byte = 0xAB
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 10
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x8B
+
+READ  : COMPUTED PARITY = codeword=11011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0001    => 1000 1011 [0x8B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100001
+READ  : SYNDROME        = codeword=00101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 10
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x8B
+DATA  : flipped bit byte = 0xAB
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 11
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xEB
+
+READ  : COMPUTED PARITY = codeword=00011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0111    => 1110 1011 [0xEB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100111
+READ  : SYNDROME        = codeword=01101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 11
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xEB
+DATA  : flipped bit byte = 0xAB
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+test case 12
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x2B
+
+READ  : COMPUTED PARITY = codeword=11101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0100    => 0010 1011 [0x2B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100100
+READ  : SYNDROME        = codeword=00011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 12
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x2B
+DATA  : flipped bit byte = 0xAB
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=0
+PARITY: bit to flip=4
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x37
+
+test case 0, 1
+PARITY: request=1
+PARITY: bit to flip=0
+PARITY: original byte    = 0x37
+PARITY: flipped bit byte = 0x36
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 101_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1011110100101
+READ  : SYNDROME        = codeword=01000
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+PARITY: request=1
+PARITY: bit to flip=0
+PARITY: original byte    = 0x36
+PARITY: flipped bit byte = 0x37
+
+test case 0, 2
+PARITY: request=2
+PARITY: bit to flip=1
+PARITY: original byte    = 0x37
+PARITY: flipped bit byte = 0x35
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 110_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1101110100101
+READ  : SYNDROME        = codeword=00100
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+PARITY: request=2
+PARITY: bit to flip=1
+PARITY: original byte    = 0x35
+PARITY: flipped bit byte = 0x37
+
+test case 0, 3
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAA
+
+READ  : COMPUTED PARITY = codeword=10010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0101    => 1010 1010 [0xAA]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1110110100101
+READ  : SYNDROME        = codeword=01100
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xAB
+
+test case 0, 4
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x37
+PARITY: flipped bit byte = 0x33
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111010100101
+READ  : SYNDROME        = codeword=00010
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x33
+PARITY: flipped bit byte = 0x37
+
+test case 0, 5
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA9
+
+READ  : COMPUTED PARITY = codeword=10100
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_0101    => 1010 1001 [0xA9]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111100100101
+READ  : SYNDROME        = codeword=01010
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0xAB
+
+test case 0, 6
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAF
+
+READ  : COMPUTED PARITY = codeword=11000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_0101    => 1010 1111 [0xAF]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111111100101
+READ  : SYNDROME        = codeword=00110
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0xAB
+
+test case 0, 7
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA3
+
+READ  : COMPUTED PARITY = codeword=00000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_0101    => 1010 0011 [0xA3]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111110000101
+READ  : SYNDROME        = codeword=01110
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xA3
+DATA  : flipped bit byte = 0xAB
+
+test case 0, 8
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x37
+PARITY: flipped bit byte = 0x3F
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111110110101
+READ  : SYNDROME        = codeword=00001
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x3F
+PARITY: flipped bit byte = 0x37
+
+test case 0, 9
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xBB
+
+READ  : COMPUTED PARITY = codeword=10111
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_1101    => 1011 1011 [0xBB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111110101101
+READ  : SYNDROME        = codeword=01001
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xBB
+DATA  : flipped bit byte = 0xAB
+
+test case 0, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x8B
+
+READ  : COMPUTED PARITY = codeword=11011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0001    => 1000 1011 [0x8B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111110100001
+READ  : SYNDROME        = codeword=00101
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x8B
+DATA  : flipped bit byte = 0xAB
+
+test case 0, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xEB
+
+READ  : COMPUTED PARITY = codeword=00011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0111    => 1110 1011 [0xEB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111110100111
+READ  : SYNDROME        = codeword=01101
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xEB
+DATA  : flipped bit byte = 0xAB
+
+test case 0, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x2B
+
+READ  : COMPUTED PARITY = codeword=11101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 111_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0100    => 0010 1011 [0x2B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1111110100100
+READ  : SYNDROME        = codeword=00011
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=10000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x2B
+DATA  : flipped bit byte = 0xAB
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=1
+PARITY: bit to flip=0
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x26
+
+test case 1, 2
+PARITY: request=2
+PARITY: bit to flip=1
+PARITY: original byte    = 0x26
+PARITY: flipped bit byte = 0x24
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 000_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0001110100101
+READ  : SYNDROME        = codeword=01100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=2
+PARITY: bit to flip=1
+PARITY: original byte    = 0x24
+PARITY: flipped bit byte = 0x26
+
+test case 1, 3
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAA
+
+READ  : COMPUTED PARITY = codeword=10010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0101    => 1010 1010 [0xAA]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0010110100101
+READ  : SYNDROME        = codeword=00100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xAB
+
+test case 1, 4
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x26
+PARITY: flipped bit byte = 0x22
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011010100101
+READ  : SYNDROME        = codeword=01010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x22
+PARITY: flipped bit byte = 0x26
+
+test case 1, 5
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA9
+
+READ  : COMPUTED PARITY = codeword=10100
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_0101    => 1010 1001 [0xA9]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011100100101
+READ  : SYNDROME        = codeword=00010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0xAB
+
+test case 1, 6
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAF
+
+READ  : COMPUTED PARITY = codeword=11000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_0101    => 1010 1111 [0xAF]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011111100101
+READ  : SYNDROME        = codeword=01110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0xAB
+
+test case 1, 7
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA3
+
+READ  : COMPUTED PARITY = codeword=00000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_0101    => 1010 0011 [0xA3]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011110000101
+READ  : SYNDROME        = codeword=00110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xA3
+DATA  : flipped bit byte = 0xAB
+
+test case 1, 8
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x26
+PARITY: flipped bit byte = 0x2E
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011110110101
+READ  : SYNDROME        = codeword=01001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x2E
+PARITY: flipped bit byte = 0x26
+
+test case 1, 9
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xBB
+
+READ  : COMPUTED PARITY = codeword=10111
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_1101    => 1011 1011 [0xBB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011110101101
+READ  : SYNDROME        = codeword=00001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xBB
+DATA  : flipped bit byte = 0xAB
+
+test case 1, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x8B
+
+READ  : COMPUTED PARITY = codeword=11011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0001    => 1000 1011 [0x8B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011110100001
+READ  : SYNDROME        = codeword=01101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x8B
+DATA  : flipped bit byte = 0xAB
+
+test case 1, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xEB
+
+READ  : COMPUTED PARITY = codeword=00011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0111    => 1110 1011 [0xEB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011110100111
+READ  : SYNDROME        = codeword=00101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xEB
+DATA  : flipped bit byte = 0xAB
+
+test case 1, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x2B
+
+READ  : COMPUTED PARITY = codeword=11101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0100    => 0010 1011 [0x2B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011110100100
+READ  : SYNDROME        = codeword=01011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x2B
+DATA  : flipped bit byte = 0xAB
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=2
+PARITY: bit to flip=1
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x25
+
+test case 2, 3
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAA
+
+READ  : COMPUTED PARITY = codeword=10010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0101    => 1010 1010 [0xAA]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0100110100101
+READ  : SYNDROME        = codeword=01000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xAB
+
+test case 2, 4
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x25
+PARITY: flipped bit byte = 0x21
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101010100101
+READ  : SYNDROME        = codeword=00110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x21
+PARITY: flipped bit byte = 0x25
+
+test case 2, 5
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA9
+
+READ  : COMPUTED PARITY = codeword=10100
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_0101    => 1010 1001 [0xA9]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101100100101
+READ  : SYNDROME        = codeword=01110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0xAB
+
+test case 2, 6
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAF
+
+READ  : COMPUTED PARITY = codeword=11000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_0101    => 1010 1111 [0xAF]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101111100101
+READ  : SYNDROME        = codeword=00010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0xAB
+
+test case 2, 7
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA3
+
+READ  : COMPUTED PARITY = codeword=00000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_0101    => 1010 0011 [0xA3]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101110000101
+READ  : SYNDROME        = codeword=01010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xA3
+DATA  : flipped bit byte = 0xAB
+
+test case 2, 8
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x25
+PARITY: flipped bit byte = 0x2D
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101110110101
+READ  : SYNDROME        = codeword=00101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x2D
+PARITY: flipped bit byte = 0x25
+
+test case 2, 9
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xBB
+
+READ  : COMPUTED PARITY = codeword=10111
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_1101    => 1011 1011 [0xBB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101110101101
+READ  : SYNDROME        = codeword=01101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xBB
+DATA  : flipped bit byte = 0xAB
+
+test case 2, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x8B
+
+READ  : COMPUTED PARITY = codeword=11011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0001    => 1000 1011 [0x8B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101110100001
+READ  : SYNDROME        = codeword=00001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x8B
+DATA  : flipped bit byte = 0xAB
+
+test case 2, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xEB
+
+READ  : COMPUTED PARITY = codeword=00011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0111    => 1110 1011 [0xEB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101110100111
+READ  : SYNDROME        = codeword=01001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xEB
+DATA  : flipped bit byte = 0xAB
+
+test case 2, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x2B
+
+READ  : COMPUTED PARITY = codeword=11101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 010_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0100    => 0010 1011 [0x2B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0101110100100
+READ  : SYNDROME        = codeword=00111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x2B
+DATA  : flipped bit byte = 0xAB
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAA
+
+test case 3, 4
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x23
+
+READ  : COMPUTED PARITY = codeword=10010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0101    => 1010 1010 [0xAA]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110010100101
+READ  : SYNDROME        = codeword=01110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x23
+PARITY: flipped bit byte = 0x27
+
+test case 3, 5
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xA8
+
+READ  : COMPUTED PARITY = codeword=01000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_001_0101    => 1010 1000 [0xA8]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110100100101
+READ  : SYNDROME        = codeword=00110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xA8
+DATA  : flipped bit byte = 0xAA
+
+test case 3, 6
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xAE
+
+READ  : COMPUTED PARITY = codeword=00100
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_111_0101    => 1010 1110 [0xAE]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110111100101
+READ  : SYNDROME        = codeword=01010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAE
+DATA  : flipped bit byte = 0xAA
+
+test case 3, 7
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xA2
+
+READ  : COMPUTED PARITY = codeword=11100
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_100_0101    => 1010 0010 [0xA2]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110110000101
+READ  : SYNDROME        = codeword=00010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xA2
+DATA  : flipped bit byte = 0xAA
+
+test case 3, 8
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x2F
+
+READ  : COMPUTED PARITY = codeword=10010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0101    => 1010 1010 [0xAA]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110110110101
+READ  : SYNDROME        = codeword=01101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x2F
+PARITY: flipped bit byte = 0x27
+
+test case 3, 9
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xBA
+
+READ  : COMPUTED PARITY = codeword=01011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_1101    => 1011 1010 [0xBA]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110110101101
+READ  : SYNDROME        = codeword=00101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xBA
+DATA  : flipped bit byte = 0xAA
+
+test case 3, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0x8A
+
+READ  : COMPUTED PARITY = codeword=00111
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0001    => 1000 1010 [0x8A]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110110100001
+READ  : SYNDROME        = codeword=01001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x8A
+DATA  : flipped bit byte = 0xAA
+
+test case 3, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xEA
+
+READ  : COMPUTED PARITY = codeword=11111
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0111    => 1110 1010 [0xEA]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110110100111
+READ  : SYNDROME        = codeword=00001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xEA
+DATA  : flipped bit byte = 0xAA
+
+test case 3, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0x2A
+
+READ  : COMPUTED PARITY = codeword=00001
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0100    => 0010 1010 [0x2A]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110110100100
+READ  : SYNDROME        = codeword=01111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x2A
+DATA  : flipped bit byte = 0xAA
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=4
+PARITY: bit to flip=2
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x23
+
+test case 4, 5
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA9
+
+READ  : COMPUTED PARITY = codeword=10100
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_0101    => 1010 1001 [0xA9]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111000100101
+READ  : SYNDROME        = codeword=01000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0xAB
+
+test case 4, 6
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAF
+
+READ  : COMPUTED PARITY = codeword=11000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_0101    => 1010 1111 [0xAF]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111011100101
+READ  : SYNDROME        = codeword=00100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0xAB
+
+test case 4, 7
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA3
+
+READ  : COMPUTED PARITY = codeword=00000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_0101    => 1010 0011 [0xA3]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111010000101
+READ  : SYNDROME        = codeword=01100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xA3
+DATA  : flipped bit byte = 0xAB
+
+test case 4, 8
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x23
+PARITY: flipped bit byte = 0x2B
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111010110101
+READ  : SYNDROME        = codeword=00011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x2B
+PARITY: flipped bit byte = 0x23
+
+test case 4, 9
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xBB
+
+READ  : COMPUTED PARITY = codeword=10111
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_1101    => 1011 1011 [0xBB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111010101101
+READ  : SYNDROME        = codeword=01011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xBB
+DATA  : flipped bit byte = 0xAB
+
+test case 4, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x8B
+
+READ  : COMPUTED PARITY = codeword=11011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0001    => 1000 1011 [0x8B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111010100001
+READ  : SYNDROME        = codeword=00111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x8B
+DATA  : flipped bit byte = 0xAB
+
+test case 4, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xEB
+
+READ  : COMPUTED PARITY = codeword=00011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0111    => 1110 1011 [0xEB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111010100111
+READ  : SYNDROME        = codeword=01111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xEB
+DATA  : flipped bit byte = 0xAB
+
+test case 4, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x2B
+
+READ  : COMPUTED PARITY = codeword=11101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0100    => 0010 1011 [0x2B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111010100100
+READ  : SYNDROME        = codeword=00001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x2B
+DATA  : flipped bit byte = 0xAB
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=5
+DATA  : bit to flip=1
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA9
+
+test case 5, 6
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0xAD
+
+READ  : COMPUTED PARITY = codeword=00010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_011_0101    => 1010 1101 [0xAD]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111101100101
+READ  : SYNDROME        = codeword=01100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAD
+DATA  : flipped bit byte = 0xA9
+
+test case 5, 7
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0xA1
+
+READ  : COMPUTED PARITY = codeword=11010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_000_0101    => 1010 0001 [0xA1]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111100000101
+READ  : SYNDROME        = codeword=00100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xA1
+DATA  : flipped bit byte = 0xA9
+
+test case 5, 8
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x2F
+
+READ  : COMPUTED PARITY = codeword=10100
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_0101    => 1010 1001 [0xA9]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111100110101
+READ  : SYNDROME        = codeword=01011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x2F
+PARITY: flipped bit byte = 0x27
+
+test case 5, 9
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0xB9
+
+READ  : COMPUTED PARITY = codeword=01101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_1101    => 1011 1001 [0xB9]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111100101101
+READ  : SYNDROME        = codeword=00011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xB9
+DATA  : flipped bit byte = 0xA9
+
+test case 5, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0x89
+
+READ  : COMPUTED PARITY = codeword=00001
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_0001    => 1000 1001 [0x89]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111100100001
+READ  : SYNDROME        = codeword=01111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x89
+DATA  : flipped bit byte = 0xA9
+
+test case 5, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0xE9
+
+READ  : COMPUTED PARITY = codeword=11001
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_0111    => 1110 1001 [0xE9]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111100100111
+READ  : SYNDROME        = codeword=00111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xE9
+DATA  : flipped bit byte = 0xA9
+
+test case 5, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xA9
+DATA  : flipped bit byte = 0x29
+
+READ  : COMPUTED PARITY = codeword=00111
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_001_0100    => 0010 1001 [0x29]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111100100100
+READ  : SYNDROME        = codeword=01001
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x29
+DATA  : flipped bit byte = 0xA9
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=6
+DATA  : bit to flip=2
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAF
+
+test case 6, 7
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0xA7
+
+READ  : COMPUTED PARITY = codeword=10110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_110_0101    => 1010 0111 [0xA7]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111111000101
+READ  : SYNDROME        = codeword=01000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xA7
+DATA  : flipped bit byte = 0xAF
+
+test case 6, 8
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x2F
+
+READ  : COMPUTED PARITY = codeword=11000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_0101    => 1010 1111 [0xAF]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111111110101
+READ  : SYNDROME        = codeword=00111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x2F
+PARITY: flipped bit byte = 0x27
+
+test case 6, 9
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0xBF
+
+READ  : COMPUTED PARITY = codeword=00001
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_1101    => 1011 1111 [0xBF]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111111101101
+READ  : SYNDROME        = codeword=01111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xBF
+DATA  : flipped bit byte = 0xAF
+
+test case 6, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0x8F
+
+READ  : COMPUTED PARITY = codeword=01101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_0001    => 1000 1111 [0x8F]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111111100001
+READ  : SYNDROME        = codeword=00011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x8F
+DATA  : flipped bit byte = 0xAF
+
+test case 6, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0xEF
+
+READ  : COMPUTED PARITY = codeword=10101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_0111    => 1110 1111 [0xEF]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111111100111
+READ  : SYNDROME        = codeword=01011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xEF
+DATA  : flipped bit byte = 0xAF
+
+test case 6, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xAF
+DATA  : flipped bit byte = 0x2F
+
+READ  : COMPUTED PARITY = codeword=01011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_111_0100    => 0010 1111 [0x2F]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111111100100
+READ  : SYNDROME        = codeword=00101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x2F
+DATA  : flipped bit byte = 0xAF
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=7
+DATA  : bit to flip=3
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xA3
+
+test case 7, 8
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x2F
+
+READ  : COMPUTED PARITY = codeword=00000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_0101    => 1010 0011 [0xA3]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110010101
+READ  : SYNDROME        = codeword=01111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x2F
+PARITY: flipped bit byte = 0x27
+
+test case 7, 9
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xA3
+DATA  : flipped bit byte = 0xB3
+
+READ  : COMPUTED PARITY = codeword=11001
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_1101    => 1011 0011 [0xB3]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110001101
+READ  : SYNDROME        = codeword=00111
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xB3
+DATA  : flipped bit byte = 0xA3
+
+test case 7, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xA3
+DATA  : flipped bit byte = 0x83
+
+READ  : COMPUTED PARITY = codeword=10101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_0001    => 1000 0011 [0x83]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110000001
+READ  : SYNDROME        = codeword=01011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x83
+DATA  : flipped bit byte = 0xA3
+
+test case 7, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xA3
+DATA  : flipped bit byte = 0xE3
+
+READ  : COMPUTED PARITY = codeword=01101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_0111    => 1110 0011 [0xE3]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110000111
+READ  : SYNDROME        = codeword=00011
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xE3
+DATA  : flipped bit byte = 0xA3
+
+test case 7, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xA3
+DATA  : flipped bit byte = 0x23
+
+READ  : COMPUTED PARITY = codeword=10011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_100_0100    => 0010 0011 [0x23]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110000100
+READ  : SYNDROME        = codeword=01101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x23
+DATA  : flipped bit byte = 0xA3
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=8
+PARITY: bit to flip=3
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x2F
+
+test case 8, 9
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xBB
+
+READ  : COMPUTED PARITY = codeword=10111
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_1101    => 1011 1011 [0xBB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110111101
+READ  : SYNDROME        = codeword=01000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xBB
+DATA  : flipped bit byte = 0xAB
+
+test case 8, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x8B
+
+READ  : COMPUTED PARITY = codeword=11011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0001    => 1000 1011 [0x8B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110110001
+READ  : SYNDROME        = codeword=00100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x8B
+DATA  : flipped bit byte = 0xAB
+
+test case 8, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xEB
+
+READ  : COMPUTED PARITY = codeword=00011
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0111    => 1110 1011 [0xEB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110110111
+READ  : SYNDROME        = codeword=01100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xEB
+DATA  : flipped bit byte = 0xAB
+
+test case 8, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x2B
+
+READ  : COMPUTED PARITY = codeword=11101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___1____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0100    => 0010 1011 [0x2B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110110100
+READ  : SYNDROME        = codeword=00010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x2B
+DATA  : flipped bit byte = 0xAB
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=9
+DATA  : bit to flip=4
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xBB
+
+test case 9, 10
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xBB
+DATA  : flipped bit byte = 0x9B
+
+READ  : COMPUTED PARITY = codeword=00010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_1001    => 1001 1011 [0x9B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110101001
+READ  : SYNDROME        = codeword=01100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x9B
+DATA  : flipped bit byte = 0xBB
+
+test case 9, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xBB
+DATA  : flipped bit byte = 0xFB
+
+READ  : COMPUTED PARITY = codeword=11010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_1111    => 1111 1011 [0xFB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110101111
+READ  : SYNDROME        = codeword=00100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xFB
+DATA  : flipped bit byte = 0xBB
+
+test case 9, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xBB
+DATA  : flipped bit byte = 0x3B
+
+READ  : COMPUTED PARITY = codeword=00100
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_1100    => 0011 1011 [0x3B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110101100
+READ  : SYNDROME        = codeword=01010
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x3B
+DATA  : flipped bit byte = 0xBB
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x8B
+
+test case 10, 11
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0x8B
+DATA  : flipped bit byte = 0xCB
+
+READ  : COMPUTED PARITY = codeword=10110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0011    => 1100 1011 [0xCB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100011
+READ  : SYNDROME        = codeword=01000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xCB
+DATA  : flipped bit byte = 0x8B
+
+test case 10, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x8B
+DATA  : flipped bit byte = 0x0B
+
+READ  : COMPUTED PARITY = codeword=01000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0000    => 0000 1011 [0x0B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100000
+READ  : SYNDROME        = codeword=00110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x0B
+DATA  : flipped bit byte = 0x8B
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=11
+DATA  : bit to flip=6
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xEB
+
+test case 11, 12
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xEB
+DATA  : flipped bit byte = 0x6B
+
+READ  : COMPUTED PARITY = codeword=10000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0110    => 0110 1011 [0x6B]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100110
+READ  : SYNDROME        = codeword=01110
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+DOUBLE BIT ERROR
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0x6B
+DATA  : flipped bit byte = 0xEB
+
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=12
+DATA  : bit to flip=7
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0x2B
+
+**** TEST CASE 1: bit 3 is d01 @ position 0 ******
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAB
+DATA  : flipped bit byte = 0xAA
+
+READ  : COMPUTED PARITY = codeword=10010
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_0101    => 1010 1010 [0xAA]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0110110100101
+READ  : SYNDROME        = codeword=01100
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 3
+
+DATA  : request=3
+DATA  : bit to flip=0
+DATA  : original byte    = 0xAA
+DATA  : flipped bit byte = 0xAB
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+**** END TEST CASE 1 *****************************
+
+**** TEST CASE 2: bit 10 is d05 @ position 10 ****
+WRITE : COMPUTED PARITY = codeword=00000
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 000_0___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_1010    => 0101 1010 [0x5A]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0000010101010
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x5A
+DATA  : flipped bit byte = 0x7A
+
+READ  : COMPUTED PARITY = codeword=10101
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 000_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_1110    => 0111 1010 [0x7A]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0000010101110
+READ  : SYNDROME        = codeword=00101
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 10
+
+DATA  : request=10
+DATA  : bit to flip=5
+DATA  : original byte    = 0x7A
+DATA  : flipped bit byte = 0x5A
+
+READ  : COMPUTED PARITY = codeword=00000
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 000_0___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_101_1010    => 0101 1010 [0x5A]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0000010101010
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=00000
+
+**** END TEST CASE 2 *****************************
+
+**** TEST CASE 3: bit 0 is pW @ position 0 *******
+WRITE : COMPUTED PARITY = codeword=00110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___0_011_0011    => 1100 1100 [0xCC]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0010101100011
+
+PARITY: request=0
+PARITY: bit to flip=4
+PARITY: original byte    = 0x26
+PARITY: flipped bit byte = 0x36
+
+READ  : COMPUTED PARITY = codeword=00110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 101_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___0_011_0011    => 1100 1100 [0xCC]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 1010101100011
+READ  : SYNDROME        = codeword=00000
+READ  : PW              = codeword=10000
+READ  : PW2             = codeword=00000
+
+PW ERROR
+
+**** END TEST CASE 3 *****************************
+
+**** TEST CASE 4: bit 1 is p01 @ position 1 ******
+WRITE : COMPUTED PARITY = codeword=01110
+WRITE : PARITY          = addr=0x7ff6056d58 (offset=0) 011_1___0____
+WRITE : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+WRITE : ECODED          = addr=0x7ff6056d58 (offset=0) 0111110100101
+
+PARITY: request=1
+PARITY: bit to flip=0
+PARITY: original byte    = 0x27
+PARITY: flipped bit byte = 0x26
+
+READ  : COMPUTED PARITY = codeword=01110
+READ  : PARITY          = addr=0x7ff6056d58 (offset=0) 001_1___0____
+READ  : DATA            = addr=0x7ff6056d58 (offset=0) ___1_101_0101    => 1010 1011 [0xAB]
+READ  : ECODED          = addr=0x7ff6056d58 (offset=0) 0011110100101
+READ  : SYNDROME        = codeword=01000
+READ  : PW              = codeword=00000
+READ  : PW2             = codeword=10000
+
+SBE @ 1
+
+**** END TEST CASE 4 *****************************
+
+**** TEST CASE 5: Read after Write all ***********
+**** END TEST CASE 5 *****************************
+
