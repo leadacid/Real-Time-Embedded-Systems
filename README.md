@@ -1,5 +1,5 @@
 # Real-Time-Embedded-Systems
-# Specialization - 4 course series
+# Specialization - 3 course series
 The Real-Time Embedded Systems specialization is a series of four course taking you from a beginning practitioner, to a more advanced real-time system analyst and designer.  Knowledge and experience gained on hard to master topics such as predictable response services, when to allocate requirements to hardware or software, as well as mission critical design will enhance your engineering talent.  You will gain experience building a simple, but real, system project with real-time challenges, that will boost your confidence.  
 
  The hands-on, at home, project hardware is affordable, widely available, and quick-time-to market  methods leverage Linux  real-time extensions, open source RTOS (Real-Time  Operating System), as well as tried and true cyclic executives.  
